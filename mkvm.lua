@@ -1,5 +1,5 @@
 local args = {...}
-local MKVIM_DEBUG = true
+local MKVIM_DEBUG = false
 
 local function debug(...)
   if MKVIM_DEBUG then
