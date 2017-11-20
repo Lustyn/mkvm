@@ -985,11 +985,15 @@ local ok, err = pcall( function()
               cmd = fi.readAll()
               fi.close()
               fs.delete(".boot_ccbox")
-            end
-            os.run( {}, sShell, cmd)
-            if cmd then
+              os.run( {}, "rom/enhanced_shell.lua", cmd)
+              if term.isColour() then
+                term.setTextColour(colours.yellow)
+              end
+              print("Goodbye")
+              term.setTextColour(colours.white)
               os.shutdown()
             else
+              os.run( {}, sShell, cmd)
               os.run( {}, "rom/programs/shutdown.lua" )
             end
         end,
