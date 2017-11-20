@@ -993,7 +993,7 @@ local ok, err = pcall( function()
               term.setTextColour(colours.white)
               os.shutdown()
             else
-              os.run( {}, sShell, cmd)
+              os.run( {}, sShell)
               os.run( {}, "rom/programs/shutdown.lua" )
             end
         end,
