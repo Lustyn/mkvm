@@ -18,7 +18,7 @@ local function resolve(path)
   return resolved
 end
 
-local default_mounts = {"rw:/:/vms/%NAME%","r:/rom:/rom","r:/rom/bios.lua:/vms/%NAME%/rom/bios.lua","r:/rom/enhanced_startup.lua:/vms/%NAME%/rom/enhanced_startup.lua","r:/rom/enhanced_shell.lua:/vms/%NAME%/rom/enhanced_shell.lua"}
+local default_mounts = {"rw:/:/vms/%NAME%","r:/rom:/rom","r:/rom/bios.lua:/vms/%NAME%/rom/bios.lua","r:/rom/enhanced_startup.lua:/vms/enhanced_startup.lua","r:/rom/enhanced_shell.lua:/vms/enhanced_shell.lua"}
 local default_bios_path = "/vms/%NAME%/rom/bios.lua"
 
 local help  = "Usage: "..shell.getRunningProgram().." <name> [flags]\nFlags:\n"
@@ -227,8 +227,8 @@ ask_for_directory("/vms/"..name)
 local command
 if not ebios_disabled then
   ask_for_file("/vms/"..name.."/.settings", {"/vms/"..name.."/.settings"}, {"wget", "https://raw.githubusercontent.com/justync7/mkvm/master/.enhanced_settings", "/vms/"..name.."/.settings"})
-  ask_for_file("/vms/"..name.."/rom/enhanced_startup.lua", {"/vms/"..name.."/rom/enhanced_startup.lua"}, {"wget", "https://raw.githubusercontent.com/justync7/mkvm/master/enhanced_startup.lua", "/vms/"..name.."/rom/enhanced_startup.lua"})
-  ask_for_file("/vms/"..name.."/rom/enhanced_shell.lua", {"/vms/"..name.."/rom/enhanced_shell.lua"}, {"wget", "https://raw.githubusercontent.com/justync7/mkvm/master/enhanced_shell.lua", "/vms/"..name.."/rom/enhanced_shell.lua"})
+  ask_for_file("/vms/enhanced_startup.lua", {"/vms/enhanced_startup.lua"}, {"wget", "https://raw.githubusercontent.com/justync7/mkvm/master/enhanced_startup.lua", "/vms/enhanced_startup.lua"})
+  ask_for_file("/vms/enhanced_shell.lua", {"/vms/enhanced_shell.lua"}, {"wget", "https://raw.githubusercontent.com/justync7/mkvm/master/enhanced_shell.lua", "/vms/enhanced_shell.lua"})
   command = pargs["--command"]
   pargs["--command"] = nil
 end
