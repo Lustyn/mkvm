@@ -1,0 +1,11 @@
+{
+  [ "edit.default_extension" ] = "lua",
+  [ "paint.default_extension" ] = "nfp",
+  [ "shell.autocomplete" ] = true,
+  [ "list.show_hidden" ] = false,
+  [ "shell.allow_disk_startup" ] = true,
+  [ "shell.allow_startup" ] = true,
+  [ "bios.use_multishell" ] = false,
+  [ "lua.autocomplete" ] = true,
+  [ "edit.autocomplete" ] = true,
+}
